@@ -1,43 +1,4 @@
-[workspace]
-resolver = "2"
-members = [
-  "examples/run_wasm",
-  "examples/lottie_player",
-  "examples/drag_n_drop",
-  "examples/text",
-  "examples/scene",
-  "examples/scene_ui",
-  "examples/lottie",
-  "examples/lottie_ui",
-  "examples/svg",
-  "examples/svg_ui",
-  "examples/render_layers",
-  "examples/cube3d",
-  "examples/headless",
-  "examples/diagnostics",
-  "examples/view_culling",
-  "examples/scaling",
-]
 
-[workspace.package]
-edition = "2024"
-version = "0.10.3"
-rust-version = "1.87"
-license = "MIT OR Apache-2.0"
-repository = "https://github.com/linebender/bevy_vello"
-
-[workspace.dependencies]
-bevy = { version = "0.16.1", default-features = false, features = [
-  "bevy_asset",
-  "bevy_winit",
-  "bevy_window",
-  "bevy_core_pipeline",
-  "bevy_render",
-  "bevy_ui",
-  "multi_threaded",
-  "x11",
-  "tonemapping_luts",
-] }
 
 [package]
 name = "bevy_vello"
@@ -47,16 +8,22 @@ authors = [
   "Spencer C. Imbleau <spencer@imbleau.com>",
 ]
 keywords = ["gamedev", "graphics"]
-version.workspace = true
-license.workspace = true
-edition.workspace = true
-repository.workspace = true
+version = "0.10.3"
+license = "MIT OR Apache-2.0"
+edition = "2024"
+repository = "https://github.com/linebender/bevy_vello"
 
 [lib]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [dependencies]
-bevy = { workspace = true }
+bevy = { version = "0.16.1", default-features = false, features = [
+  "bevy_asset",
+  "bevy_window",
+  "bevy_core_pipeline",
+  "bevy_render",
+  "tonemapping_luts",
+] }
 # Ensure this version stays up to date with the README
 vello = "0.5.0"
 thiserror = "2.0.11"
